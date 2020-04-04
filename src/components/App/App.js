@@ -30,6 +30,11 @@ class App extends Component {
       })
   }
 
+  addLikes = (item) => {
+    console.log('In addLikes', item);
+
+  }
+
   render() {
     return (
       <div className="App">
@@ -38,7 +43,9 @@ class App extends Component {
         </header>
         <br />
         <p>Enjoy the Exhibit</p>
-        <GalleryList list={this.state.galleryItems}/>
+        <GalleryList 
+        list={this.state.galleryItems}
+        addLikes={this.addLikes}/>
       </div>
     );
   }

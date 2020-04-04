@@ -23,15 +23,15 @@ const galleryItems = [
     {
     id: 4, 
     title: 'Kitties', 
-    path: 'images/sifandnatasha.jpg', 
-    description: 'Two of my adorable cats! My third one, Stark, is not pictured.', 
+    path: 'images/kitties.jpg', 
+    description: 'Stark, Sif, and Natasha. Lovable goofs.', 
     likes: 0    
     },
     {
     id: 5, 
-    title: 'Bestie', 
-    path: 'images/meandsara.jpg', 
-    description: 'My best friend Sara and I at her wedding.', 
+    title: 'Parents', 
+    path: 'images/meandparents.jpg', 
+    description: 'My parents and I at Vikings training camp.', 
     likes: 0    
     },
     {

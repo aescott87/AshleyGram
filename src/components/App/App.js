@@ -29,9 +29,19 @@ class App extends Component {
         console.log('Error on GET gallery items', error);
       })
   }
-
+  //Function to update likes count
   addLikes = (item) => {
     console.log('In addLikes', item);
+    //PUT request
+    axios.put(`/gallery/like/${item.id}`)
+      .then( response => {
+        //Re-render the gallery
+        this.getItems()
+      })
+      .catch( error => {
+        alert(`Oh nos! We couldn't add your like. Try again later`);
+        console.log('Error updating likes count', error);
+      })
 
   }
 

@@ -1,16 +1,44 @@
 import React, { Component } from 'react';
+import axios from 'axios';
 import './App.css';
+import GalleryList from '../GalleryList/GalleryList';
+
 
 class App extends Component {
+  //Set state
+  state = {
+    galleryItems: []
+  }
+  //Happens on page load
+  componentDidMount() {
+    this.getItems();
+  }
+
+  getItems = () => {
+    //GET request to get all gallery items
+    axios.get('/gallery')
+      .then((response) => {
+        console.log(response.data);
+        //Setting state with new array to make sure
+        // we have all gallery items
+        this.setState({
+          galleryItems: response.data,
+        })
+      }).catch((error) => {
+        alert('Oh nos! We could not get the gallery');
+        console.log('Error on GET gallery items', error);
+      })
+  }
+
   render() {
     return (
       <div className="App">
         <header className="App-header">
           <h1 className="App-title">Gallery of my life</h1>
         </header>
-        <br/>
-        <p>Gallery goes here</p>
-        <img src="images/goat_small.jpg"/>
+        <br />
+        <p>Enjoy the Exhibit</p>
+        <GalleryList list={this.state.galleryItems}/>
       </div>
     );
   }

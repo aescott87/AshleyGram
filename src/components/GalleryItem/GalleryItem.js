@@ -2,27 +2,27 @@ import React, { Component } from 'react';
 
 class GalleryItem extends Component {
 
+    //Set state for our description
     state = {
         showDescription: false,
     }
-
+    //Function that changes our state when an image is clicked
     handleToggle = () => {
         console.log('in handleToggle');
-        //setState
+        //setState to change showDescription
         this.setState({
-            //Change boolean value
             showDescription: !this.state.showDescription,
         });
     }
-
+    //Function that renders elements based on showDescription state
     handleDescription = () => {
         console.log('In handleDescription');
-        
+        //conditional statement based on true/false of showDescription
         if(this.state.showDescription) {
-            //false, show description
+            //false, render description
             return <p onClick={this.handleToggle}>{this.props.item.description}</p>;
         } else {
-            //true
+            //true, render image
             return <img onClick={this.handleToggle} src={this.props.item.path} alt={this.props.item.description}/>;
         }
     }

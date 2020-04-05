@@ -3,7 +3,7 @@
 }
 
 .App-header {
-  background-color: #222;
+  background-color: goldenrod;
   height: 70px;
   padding: 20px;
   color: white;
@@ -24,4 +24,11 @@
 
 img {
   max-width: 320px;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: auto auto auto;
+  padding-top: 10px;
+  background-color: lightseagreen;
 }

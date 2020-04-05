@@ -20,7 +20,7 @@ class GalleryItem extends Component {
         //conditional statement based on true/false of showDescription
         if(this.state.showDescription) {
             //false, render description
-            return <p onClick={this.handleToggle}>{this.props.item.description}</p>;
+            return <p className="item-description" onClick={this.handleToggle}>{this.props.item.description}</p>;
         } else {
             //true, render image
             return <img onClick={this.handleToggle} src={this.props.item.path} alt={this.props.item.description}/>;
@@ -30,8 +30,9 @@ class GalleryItem extends Component {
     render() {
         let item = this.props.item;
         return(
-            <div>
+            <div className="grid-item">
                 {this.handleDescription()}
+                <br/>
                 <button onClick={() => this.props.addLikes(item)}>I love it!</button>
                 <p>{this.props.item.likes} people love this</p>
             </div>

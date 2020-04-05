@@ -49,13 +49,15 @@ class App extends Component {
     return (
       <div className="App">
         <header className="App-header">
-          <h1 className="App-title">Gallery of my life</h1>
+          <h1 className="App-title">Ashleygram</h1>
         </header>
         <br />
-        <p>Enjoy the Exhibit</p>
+        <h2>Want to know more? Click a photo for details.</h2>
+        <div className="grid-container">
         <GalleryList 
         list={this.state.galleryItems}
         addLikes={this.addLikes}/>
+        </div>
       </div>
     );
   }
